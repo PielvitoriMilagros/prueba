@@ -1,0 +1,55 @@
+<body>
+  
+<ion-card class="ion-text-center">
+  <ion-card-header>
+    <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+    <ion-card-title>Registro</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <ion-item>
+      <ion-icon name="person-circle" slot="start"></ion-icon>
+      <ion-input type="email" placeholder="Ingrese su correo electrónico" #usuario></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="lock-closed" slot="start"></ion-icon>
+      <ion-input type="password" placeholder="Ingrese clave" #clave></ion-input>
+    </ion-item>
+    
+      <ion-button color="success" (click)="registrarUsuario(usuario,clave)">Registrar</ion-button>
+      <ion-button color="danger" href="home">Volver</ion-button>
+
+
+<!-- CON FORMS -->
+
+<!-- <form [formGroup]="formRegistro">
+    <ion-item>
+      <ion-icon name="person-circle" slot="start"></ion-icon>
+      <ion-input type="email" formControlName="email" placeholder="Ingrese su correo electrónico" #usuario></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="lock-closed" slot="start"></ion-icon>
+      <ion-input type="password" formControlName="password" placeholder="Ingrese clave" #clave></ion-input>
+    </ion-item>
+
+
+      <ion-button color="success" (click)="registrarUsuario(usuario,clave)">Registrar</ion-button>
+
+
+  </form> -->
+  </ion-card-content>
+</ion-card>
+
+<ion-card [hidden]="!mostrar">
+  <ion-card-header>
+    <ion-card-subtitle>{{mensaje}}</ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
+
+
+</body>

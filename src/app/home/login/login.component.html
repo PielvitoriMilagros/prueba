@@ -1,0 +1,75 @@
+<body>
+
+  <div [hidden]="usuarioActivo == false">
+    <ion-card class="ion-text-center">
+      <ion-card-header>
+        <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+        <ion-card-title>Página de Inicio</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{usuarioActivo}}
+        Ya hay un usuario logueado en el sistema
+
+          <ion-button color="danger" (click)="logOut()">Salir</ion-button>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+  <div [hidden]="usuarioActivo">
+  <ion-card class="ion-text-center">
+    <ion-card-header>
+      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+      <ion-card-title>Ingreso</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-item>
+        <ion-icon name="person-circle" slot="start"></ion-icon>
+        <ion-input type="email" placeholder="Ingrese su correo electrónico" #usuario></ion-input>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="lock-closed" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Ingrese clave" #clave></ion-input>
+      </ion-item>
+
+      <ion-button color="success" (click)="validarUsuario(usuario,clave)">Ingresar</ion-button>
+      <ion-button color="danger" href="home">Volver</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card [hidden]="!mostrar">
+    <ion-card-header>
+      <ion-title>Error</ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{mensaje}}
+    </ion-card-content>
+  </ion-card>
+</div>
+
+</body>
+
+<!-- <div class="background_color">
+
+<ion-label #user>Usuario</ion-label>
+<ion-input type="email" for="user" placeholder="Ingrese su correo electrónico" #usuario></ion-input>
+
+<ion-label #pass>Contraseña</ion-label>
+<ion-input type="password" for="pass" placeholder="Ingrese clave" #clave></ion-input>
+
+<ion-button type="button" class="btn btn-info" (click)="validarUsuario(usuario,clave)">Ingresar</ion-button>
+
+<div *ngIf="mostrar">
+ <h3>{{usuario.value}}</h3>
+<h3>{{clave.value}}</h3> 
+
+
+   <h1>{{mensaje}}</h1>
+</div>
+</div>
+ -->
